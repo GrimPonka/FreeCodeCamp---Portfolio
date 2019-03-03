@@ -1,0 +1,307 @@
+@import
+url('https://fonts.googleapis.com/css?family=Viga');
+* {
+  margin: 0;
+  padding: 0;
+		box-sizing: border-box;
+		scroll-behavior: smooth;
+}
+body {
+  --white: #f5f6fa;
+		--white2: #ecf0f1;
+		--gray: #e0e4e5;
+  --black: #2d3436;
+		--black2: #1e272e;
+  --red: #c0392b;
+		background: var(--white2, white);
+		overflow-x: hidden;
+}
+#navbar {
+  position: fixed;
+  width: 100%;
+		height: 40px;
+  display: flex;
+  justify-content: center;
+		background: var(--white, white);
+		z-index: 2;
+		text-transform: uppercase;
+		font-family: 'Viga', sans-serif;
+		letter-spacing: 1px;
+}
+#navbar::after {
+		content: '';
+		height: 50px;
+		width: 50px;
+		background: var(--white, white);
+		position: fixed;
+		transform: translateY(-10%) rotate(45deg);
+		z-index: -1;
+}
+#navbar a {
+  padding: 12px 25px;
+		text-decoration: none;
+		color: var(--black, black);
+}
+#navbar a:hover {
+	color: var(--red, red);
+}
+.container {
+		width: 100%;
+		height: 100vh;
+		position: relative;
+		overflow: hidden;
+}
+.background {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100vh;
+	 z-index: -1;
+		background: var(--black2, black);
+  background: url("https://i.ibb.co/bvhnsTz/emile-perron-190221-unsplash.jpg") no-repeat center;
+		background-size: cover;
+		filter: blur(1px);
+		-webkit-filter: blur(1px);
+		transition: all 1.2s ease;
+}
+#welcome-section:hover ~ .background {
+		transform: scale(1.025);
+		filter: blur(0);
+		-webkit-filter: blur(0);
+}
+#welcome-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+		flex-direction: column;
+  justify-content: center;
+  align-items: center;
+		text-transform: uppercase;
+		font-family: 'Viga', sans-serif;
+		font-size: 24px;
+		color: var(--white, white);
+		text-shadow: 1px 2px 5px var(--black, black);
+}
+#welcome-section h1 {
+		font-size: 16px;
+		letter-spacing: 2px;
+}
+#welcome-section h1::before, #welcome-section h1::after {
+		content: '';
+		margin: 5px 0;
+		display: flex;
+		flex-direction: row;
+		align-items: baseline;
+		width: 100%;
+		height: 2px;
+		background: var(--white, white);
+}
+#welcome-section h2 {
+		position: relative;
+		transform: translateY(40%);
+		font-size: 1.5em;
+}
+#welcome-section a {
+		color: var(--white, white);
+		text-decoration: none;
+}
+#code_animation {
+	 width: 62px;
+		height: 20px;
+		position: absolute;
+		font-size: 50px;
+		font-weight: 100;
+		color: var(--white, white);
+		transform: translate(-50%, 300%);
+}
+#code_animation::after {
+		content: '';
+	 position: absolute;
+		width: 22px;
+		height: 5px;
+		transform: translate(20%, 900%);
+		animation: 2.8s code step-end infinite;
+}
+#code_animation:hover {
+		--anim: #c0392b;
+		color: var(--red, red);
+}
+@keyframes code {
+	0% {
+			background: transparent;
+			box-shadow: none;
+	}
+	35% {
+			background: var(--anim, #ecf0f1);
+			box-shadow: 1px 2px 5px var(--black, black);
+	}
+	50% {
+			background: transparent;
+			box-shadow: none;
+	}
+	80% {
+			background: var(--anim, #ecf0f1);
+			box-shadow: 1px 2px 5px var(--black, black);
+	}
+	100% {
+			background: transparent;
+			box-shadow: none;
+	}
+}
+.section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-items: center;
+	font-family: 'Viga', sans-serif;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: var(--black, black);
+}
+#projects {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.project-tile {
+	width: 50%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	letter-spacing: 1px;
+}
+.project-tile h4 {
+	margin: 15px;
+}
+.project-tile img {
+	width: 372px;
+	height: 201px;
+	box-shadow: 1px 4px 8px rgba(45,52,54, 0.5);
+	box-shadow: 0px 2px 10px rgba(30,39,46, 0.5);
+	transform-origin: bottom center;
+	transition: all 0.6s ease;
+}
+.project-tile img:hover {
+	transform: scale(1.025);
+}
+.section h3 {
+	padding-top: 60px;
+}
+.section_content {
+	margin-top: 20px;
+	margin-bottom: 60px;
+	max-width: 1080px;
+	min-width: 880px;
+	width: 70%;
+	min-height: calc(100vh - 140px);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	background: var(--gray, gray);
+	border-radius: 15px;
+}
+#about {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	background: var(--red, red);
+	color: var(--white2, white);
+	-webkit-clip-path: polygon(0 4%, 100% 0%, 100% 100%, 0% 100%);
+	clip-path: polygon(0 calc(0% + 4vw), 100% 0%, 100% 100%, 0% 100%);
+}
+.content {
+	margin: 60px 0;
+	height: 100%;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: space-evenly;
+
+}
+.content p {
+	margin: 20px;
+	text-transform: none;
+	font-weight: 100;
+	letter-spacing: 1px;
+	text-align: justify;
+	color: var(--white, white);
+	line-height: 35px;
+}
+#contact {
+	height: 30vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: var(--black2, black);
+}
+.foot {
+	transform: translateY(-15%);
+}
+.foot h3{
+	color: var(--white, white);
+	font-weight: 100;
+	margin: 20px;
+}
+.foot i {
+	font-size: 36px;
+	color: var(--white, white);
+}
+@media screen and (max-width: 840px) {
+	.background {
+		filter: none;
+		-webkit-filter: none;
+	}
+	.section_content {
+		flex-direction: column;
+		min-width: 525px;
+		width: 60%;
+	}
+	#projects h3 {
+		padding: 60px;
+	}
+	.project-tile {
+		margin: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-items: center;
+		align-items: center;
+	}
+}
+@media screen and (max-width: 525px) {
+	#navbar {
+		justify-content: space-around;
+	}
+	#navbar a{
+		padding: 12px 0;
+	}
+	#welcome-section h2 {
+		font-size: 0.75em;
+	}
+	.section_content {
+		min-width: 330px;
+	}
+	.project-tile img {
+		max-width: 372px;
+	 max-height: 201px;
+		width: 80%;
+  height: auto;
+		transform-origin: center center;
+	}
+}
+@media screen and (max-width: 330px) {
+	body {
+		min-width: 330px;
+	}
+	#welcome-section h2 {
+		font-size: 0.6em;
+	}
+}
